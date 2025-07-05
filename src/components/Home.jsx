@@ -3,6 +3,7 @@ import React from "react";
 import Header from "../components/Header/Header";
 import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar/Navbar";
+import Footer from "./Footer";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
             <Outlet />
           </div>
         </main>
+        <Footer />
       </div>
     </>
   );

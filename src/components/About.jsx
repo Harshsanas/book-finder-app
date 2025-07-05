@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar/Navbar";
 import aboutImg from "../assets/about-image.jpeg";
+import Footer from "./Footer";
 
 export default function About() {
   return (
@@ -107,6 +108,8 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </>
   );
 }
