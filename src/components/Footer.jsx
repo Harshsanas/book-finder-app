@@ -3,25 +3,27 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-sky-900 text-white py-8 mt-auto">
+    <footer className="bg-gradient-to-r from-sky-100 to-sky-50 py-8 mt-auto border-t border-sky-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center">
-              <span className="text-2xl font-bold text-white">BookHub</span>
+              <span className="text-2xl font-bold text-sky-800">BookHub</span>
             </Link>
-            <p className="mt-4 text-sky-200">
+            <p className="mt-4 text-sky-700">
               Your one-stop destination for discovering and exploring books from
               around the world.
             </p>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-lg font-semibold text-sky-800 mb-4">
+              Quick Links
+            </h3>
             <ul className="space-y-2">
               <li>
                 <Link
                   to="/"
-                  className="text-sky-200 hover:text-white transition-colors"
+                  className="text-sky-700 hover:text-sky-600 transition-colors"
                 >
                   Home
                 </Link>
@@ -29,7 +31,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/about"
-                  className="text-sky-200 hover:text-white transition-colors"
+                  className="text-sky-700 hover:text-sky-600 transition-colors"
                 >
                   About
                 </Link>
@@ -37,7 +39,7 @@ const Footer = () => {
               <li>
                 <a
                   href="/"
-                  className="text-sky-200 hover:text-white transition-colors"
+                  className="text-sky-700 hover:text-sky-600 transition-colors"
                 >
                   Browse Books
                 </a>
@@ -47,13 +49,13 @@ const Footer = () => {
 
           {/* Contact/Social */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Connect With Us</h3>
+            <h3 className="text-lg font-semibold text-sky-800 mb-4">Connect</h3>
             <div className="flex space-x-4">
               <a
                 href="https://github.com/Harshsanas/book-finder-app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sky-200 hover:text-white transition-colors"
+                className="text-sky-700 hover:text-sky-600 transition-colors"
                 aria-label="GitHub"
               >
                 <svg
@@ -70,7 +72,7 @@ const Footer = () => {
               </a>
               <a
                 href="#"
-                className="text-sky-200 hover:text-white transition-colors"
+                className="text-sky-700 hover:text-sky-600 transition-colors"
                 aria-label="Twitter"
               >
                 <svg
@@ -83,7 +85,7 @@ const Footer = () => {
               </a>
               <a
                 href="#"
-                className="text-sky-200 hover:text-white transition-colors"
+                className="text-sky-700 hover:text-sky-600 transition-colors"
                 aria-label="Instagram"
               >
                 <svg
@@ -99,7 +101,6 @@ const Footer = () => {
                 </svg>
               </a>
             </div>
-
             <a
               href="https://harshit-sanas.vercel.app/"
               target="_blank"
@@ -107,13 +108,13 @@ const Footer = () => {
               className="text-sky-200 hover:text-white transition-colors"
               aria-label="portfolio"
             >
-              <p className="mt-4 text-sky-200">
+              <p className="mt-4 text-sky-700">
                 https://harshit-sanas.vercel.app/
               </p>
             </a>
           </div>
         </div>
-        <div className="mt-8 pt-8 border-t border-sky-800 text-center text-sky-300">
+        <div className="mt-8 pt-8 border-t border-sky-300 text-center text-sky-600">
           <p>&copy; {new Date().getFullYear()} BookHub. All rights reserved.</p>
         </div>
       </div>
