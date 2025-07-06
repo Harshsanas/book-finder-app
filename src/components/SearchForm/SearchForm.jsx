@@ -1,14 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useGlobalContext } from "../../context";
 
 const SearchForm = () => {
-  const { setSearchTerm } = useGlobalContext();
+  const { setSearchTerm, setResultTitle, setCurrentPage } = useGlobalContext();
   const [inputValue, setInputValue] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
+
+  useEffect(() => {
+    if (inputValue.trim() === "") {
+      setResultTitle("Featured Books");
+      setCurrentPage(1);
+      return;
+    }
+
+    const timerId = setTimeout(() => {
+      if (isTyping) {
+        setSearchTerm(inputValue);
+        setCurrentPage(1);
+        setIsTyping(false);
+      }
+    }, 500);
+
+    return () => clearTimeout(timerId);
+  }, [inputValue, isTyping, setSearchTerm, setResultTitle, setCurrentPage]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (inputValue.trim()) {
-      setSearchTerm(inputValue);
+    const tempSearchTerm = inputValue.trim();
+
+    if (tempSearchTerm.replace(/[^\w\s]/gi, "").length === 0) {
+      setSearchTerm("");
+      setResultTitle("Featured Books");
+    } else {
+      setSearchTerm(tempSearchTerm);
     }
   };
 
@@ -20,7 +44,10 @@ const SearchForm = () => {
           placeholder="Search for books, authors, genres..."
           className="flex-grow px-6 py-4 text-gray-800 focus:outline-none text-base placeholder-gray-400 bg-white"
           value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
+          onChange={(e) => {
+            setInputValue(e.target.value);
+            setIsTyping(true);
+          }}
         />
         <button
           type="submit"
